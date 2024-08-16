@@ -1,0 +1,10 @@
+citHeader("To cite snitr in publications use:")
+
+bibentry(
+  bibtype  = "Manual",
+  title    = "paisaje",
+  author   =  person("Manuel", "Spínola"),
+  year     = "2024",
+  note     = "version 0.1.0",
+  url      = "https://manuelspinola.github.io/snitr/"
+)

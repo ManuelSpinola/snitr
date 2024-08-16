@@ -13,7 +13,7 @@ Description: This package download data from snit (https://www.snitcr.go.cr)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-URL: https://github.com/ManuelSpinola/snitr
+URL: https://github.com/ManuelSpinola/snitr, https://manuelspinola.github.io/snitr/
 BugReports: https://github.com/ManuelSpinola/snitr/issues
 RoxygenNote: 7.3.2
 Imports:

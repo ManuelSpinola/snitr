@@ -1,15 +1,15 @@
 #'
-#' @name list_IGN_5k
+#' @name list_IGN_25k
 #'
-#' @title List IGN 1:5000 scale layers
+#' @title List IGN 1:25000 scale layers
 #'
 #' @description
-#' This function list the available layers at a 1:5000 scale from
+#' This function list the available layers at a 1:25000 scale from
 #' the Instituto Geográfico Nacional, Costa Rica, through
 #' Sistema Nacional de Información Territorial de Costa Rica
 #'  \href{https://www.snitcr.go.cr}{SNIT}
 #'
-#' @usage list_IGN_5k()
+#' @usage list_IGN_25k()
 #'
 #' @return a list of the available layers
 #'
@@ -19,20 +19,20 @@
 #'
 #' List available layers
 #'
-#' capas <- list_IGN_5k()
+#' capas <- list_IGN_25k()
 #'
 
 library(httr)
 library(xml2)
 
-list_IGN_5k <- function() {
+list_IGN_25k <- function() {
   # load libraries
   library(httr)
   library(xml2)
   library(sf)
 
   # Hardcoded WFS service URL
-  wfs_url <- "https://geos.snitcr.go.cr/be/IGN_5/wfs?"
+  wfs_url <- "https://geos.snitcr.go.cr/be/IGN_25/wfs?"
 
   # Construct the WFS GetCapabilities request URL
   capabilities_url <- paste0(wfs_url, "service=WFS&version=2.0.0&request=GetCapabilities")

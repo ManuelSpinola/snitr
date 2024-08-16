@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# snitr
+# snitr <img align="right" width="180" src="man/figures/snitr_logo.png">
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -20,33 +20,46 @@ pak::pak("ManuelSpinola/snitr")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how to use the package:
 
 ``` r
 library(snitr)
 ## basic example code
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+capas <- list_IGN_5k()
+#> Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2() is TRUE
+#> No encoding supplied: defaulting to UTF-8.
+#>  [1] "IGN_5:forestal2017_5k"      "IGN_5:cultivos2017_5k"     
+#>  [3] "IGN_5:curvas_5000"          "IGN_5:delimitacion2017_5k" 
+#>  [5] "IGN_5:edificaciones2017_5k" "IGN_5:hidrografia_5000"    
+#>  [7] "IGN_5:limitecantonal_5k"    "IGN_5:limitedistrital_5k"  
+#>  [9] "IGN_5:limiteprovincial_5k"  "IGN_5:linea_costa_5000"    
+#> [11] "IGN_5:pastos2017_5k"        "IGN_5:urbano_5000"         
+#> [13] "IGN_5:vias_5000"
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
+``` r
+layer_name <- "IGN_5:delimitacion2017_5k"
+```
 
-You can also embed plots, for example:
+``` r
+output_file <- "IGN_5_delimitacion2017_5k.gpkg"
+```
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+``` r
+downloaded_file <- get_IGN_5k(layer_name, output_file = output_file)
+#> Reading layer `file479e3c9875ce' from data source 
+#>   `/private/var/folders/96/m4trt68j16v3n97qk3zkxrk40000gn/T/RtmpAJHYi3/file479e3c9875ce.geojson' 
+#>   using driver `GeoJSON'
+#> Simple feature collection with 475 features and 3 fields
+#> Geometry type: MULTIPOLYGON
+#> Dimension:     XY
+#> Bounding box:  xmin: 156147.2 ymin: 608238.1 xmax: 658879.4 ymax: 1241118
+#> Projected CRS: CR05 / CRTM05
+#> Deleting source `IGN_5_delimitacion2017_5k.gpkg' failed
+#> Writing layer `IGN_5_delimitacion2017_5k' to data source 
+#>   `IGN_5_delimitacion2017_5k.gpkg' using driver `GPKG'
+#> Writing 475 features with 3 fields and geometry type Multi Polygon.
+```

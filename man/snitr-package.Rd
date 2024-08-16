@@ -12,6 +12,7 @@ This package download data from snit (https://www.snitcr.go.cr)
 Useful links:
 \itemize{
   \item \url{https://github.com/ManuelSpinola/snitr}
+  \item \url{https://manuelspinola.github.io/snitr/}
   \item Report bugs at \url{https://github.com/ManuelSpinola/snitr/issues}
 }
 

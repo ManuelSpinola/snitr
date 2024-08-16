@@ -1,15 +1,15 @@
 #'
-#' @name get_IGN_5k
+#' @name get_IGN_25k
 #'
-#' @title Download IGN 1:5000 scale layers
+#' @title Download IGN 1:25000 scale layers
 #'
 #' @description
-#' This function allows downloading layers at a 1:5000 scale from
+#' This function allows downloading layers at a 1:25000 scale from
 #' the Instituto Geográfico Nacional, Costa Rica, through
 #' Sistema Nacional de Información Territorial de Costa Rica
 #'  \href{https://www.snitcr.go.cr}{SNIT}
 #'
-#' @usage get_IGN_5k(layer_name, output_file = output_file)
+#' @usage get_IGN_25k(layer_name, output_file = output_file)
 #'
 #' @param layer_name The specific layer you want to download (e.g., IGN_5:delimitacion2017_5k).
 #' @param output_format The format in which to download the data (default is GeoJSON, application/json).
@@ -25,15 +25,15 @@
 #'
 #' Replace with the actual layer name from the list
 #'
-#' layer_name <- "IGN_5:delimitacion2017_5k"
+#' layer_name <- "IGN_25:contorno_25k"
 #'
 #' Specify your desired output file format and name
 #'
-#' output_file <- "IGN_5_delimitacion2017_5k.gpkg"
+#' output_file <- "IGN_contorno_25k.gpkg"
 #'
 #' Download the selected layer
 #'
-#' downloaded_file <- get_IGN_5k(layer_name, output_file = output_file)
+#' downloaded_file <- get_IGN_25k(layer_name, output_file = output_file)
 #'
 #'
 #'
@@ -42,14 +42,14 @@ library(httr)
 library(xml2)
 library(sf)
 
-get_IGN_5k <- function(layer_name, output_format = "application/json", output_file) {
+get_IGN_25k <- function(layer_name, output_format = "application/json", output_file) {
   # load libraries
   library(httr)
   library(xml2)
   library(sf)
 
   # Hardcoded WFS service URL
-  wfs_url <- "https://geos.snitcr.go.cr/be/IGN_5/wfs?"
+  wfs_url <- "https://geos.snitcr.go.cr/be/IGN_25/wfs?"
 
   # Construct the WFS request URL
   request_url <- paste0(

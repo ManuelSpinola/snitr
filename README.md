@@ -6,7 +6,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of snitr is to …
+The goal of snitr is to download data from SNIT
 
 ## Installation
 

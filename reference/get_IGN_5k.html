@@ -47,7 +47,7 @@ Sistema Nacional de Información Territorial de Costa Rica
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_IGN_5k</span><span class="op">(</span><span class="va">layer_name</span>, output_file <span class="op">=</span> <span class="va">output_file</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">get_IGN_5k</span><span class="op">(</span><span class="va">layer_name</span>, <span class="va">output_format</span>, <span class="va">output_file</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -73,7 +73,36 @@ Sistema Nacional de Información Territorial de Costa Rica
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Select a layer from the list (replace with your chosen layer)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Replace with the actual layer name from the list</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">layer_name</span> <span class="op">&lt;-</span> <span class="st">"IGN_5:delimitacion2017_5k"</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Specify your desired output file format and name</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">output_file</span> <span class="op">&lt;-</span> <span class="st">"IGN_5_delimitacion2017_5k.gpkg"</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Download the selected layer</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu">get_IGN_5k</span><span class="op">(</span><span class="va">layer_name</span>, output_file <span class="op">=</span> <span class="va">output_file</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Reading layer `file1a8d5b3a613f' from data source </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   `/tmp/RtmpcMhv39/file1a8d5b3a613f.geojson' using driver `GeoJSON'</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 475 features and 3 fields</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: MULTIPOLYGON</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Dimension:     XY</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: 156147.2 ymin: 608238.1 xmax: 658879.4 ymax: 1241118</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Projected CRS: CR05 / CRTM05</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Deleting source `IGN_5_delimitacion2017_5k.gpkg' failed</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Writing layer `IGN_5_delimitacion2017_5k' to data source </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   `IGN_5_delimitacion2017_5k.gpkg' using driver `GPKG'</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Writing 475 features with 3 fields and geometry type Multi Polygon.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "IGN_5_delimitacion2017_5k.gpkg"</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span></span></span>
+</code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>

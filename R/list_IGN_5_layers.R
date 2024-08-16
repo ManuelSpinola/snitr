@@ -24,6 +24,7 @@ list_IGN_5_layers <- function() {
   # load libraries
   library(httr)
   library(xml2)
+  library(sf)
 
   # Hardcoded WFS service URL
   wfs_url <- "https://geos.snitcr.go.cr/be/IGN_5/wfs?"

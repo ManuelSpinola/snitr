@@ -36,7 +36,7 @@ output_file <- "IGN_5_delimitacion2017_5k.gpkg"
 
 Download the selected layer
 
-downloaded_file <- get_IGN_5k(layer_name, output_file = output_file)
+get_IGN_5k(layer_name, output_file = output_file)
 
 
 

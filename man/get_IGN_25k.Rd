@@ -36,7 +36,7 @@ output_file <- "IGN_contorno_25k.gpkg"
 
 Download the selected layer
 
-downloaded_file <- get_IGN_25k(layer_name, output_file = output_file)
+get_IGN_25k(layer_name, output_file = output_file)
 
 
 

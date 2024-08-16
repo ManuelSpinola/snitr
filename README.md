@@ -49,17 +49,18 @@ output_file <- "IGN_5_delimitacion2017_5k.gpkg"
 ```
 
 ``` r
-downloaded_file <- get_IGN_5k(layer_name, output_file = output_file)
-#> Reading layer `file479e3c9875ce' from data source 
-#>   `/private/var/folders/96/m4trt68j16v3n97qk3zkxrk40000gn/T/RtmpAJHYi3/file479e3c9875ce.geojson' 
+get_IGN_5k(layer_name, output_file = output_file)
+#> Reading layer `file4aca56abea24' from data source 
+#>   `/private/var/folders/96/m4trt68j16v3n97qk3zkxrk40000gn/T/RtmpEXZglg/file4aca56abea24.geojson' 
 #>   using driver `GeoJSON'
 #> Simple feature collection with 475 features and 3 fields
 #> Geometry type: MULTIPOLYGON
 #> Dimension:     XY
 #> Bounding box:  xmin: 156147.2 ymin: 608238.1 xmax: 658879.4 ymax: 1241118
 #> Projected CRS: CR05 / CRTM05
-#> Deleting source `IGN_5_delimitacion2017_5k.gpkg' failed
+#> Deleting source `IGN_5_delimitacion2017_5k.gpkg' using driver `GPKG'
 #> Writing layer `IGN_5_delimitacion2017_5k' to data source 
 #>   `IGN_5_delimitacion2017_5k.gpkg' using driver `GPKG'
 #> Writing 475 features with 3 fields and geometry type Multi Polygon.
+#> [1] "IGN_5_delimitacion2017_5k.gpkg"
 ```

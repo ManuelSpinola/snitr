@@ -1,5 +1,30 @@
+#'
+#' @name list_IGN_5_layers
+#'
+#' @title List IGN 5 mil layers
+#'
+#' @description
+#' This function list the available IGN 5 mil layers
+#'
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#'
+#' List available layers
+#'
+#' capas <- list_IGN_5_layers()
+#'
+
+library(httr)
+library(xml2)
 
 list_IGN_5_layers <- function() {
+  # load libraries
+  library(httr)
+  library(xml2)
+
   # Hardcoded WFS service URL
   wfs_url <- "https://geos.snitcr.go.cr/be/IGN_5/wfs?"
 

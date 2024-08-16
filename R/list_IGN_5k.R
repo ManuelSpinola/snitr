@@ -1,11 +1,15 @@
 #'
-#' @name list_IGN_5_layers
+#' @name list_IGN_5k
 #'
 #' @title List IGN 5 mil layers
 #'
 #' @description
-#' This function list the available IGN 5 mil layers
+#' This function list the available layers at a 1:5000 scale from
+#' the Instituto Geográfico Nacional, Costa Rica, through
+#' Sistema Nacional de Información Territorial de Costa Rica
+#'  \href{https://www.snitcr.go.cr}{SNIT}
 #'
+#' @usage list_IGN_5k()
 #'
 #' @return
 #' @export
@@ -14,13 +18,13 @@
 #'
 #' List available layers
 #'
-#' capas <- list_IGN_5_layers()
+#' capas <- list_IGN_5k()
 #'
 
 library(httr)
 library(xml2)
 
-list_IGN_5_layers <- function() {
+list_IGN_5k <- function() {
   # load libraries
   library(httr)
   library(xml2)

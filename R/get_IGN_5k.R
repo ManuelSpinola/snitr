@@ -1,7 +1,15 @@
 #'
-#' @name download_IGN_5_data
+#' @name get_IGN_5k
 #'
 #' @title Download IGN 5 mil layers
+#'
+#' @description
+#' This function allows downloading layers at a 1:5000 scale from
+#' the Instituto Geográfico Nacional, Costa Rica, through
+#' Sistema Nacional de Información Territorial de Costa Rica
+#'  \href{https://www.snitcr.go.cr}{SNIT}
+#'
+#' @usage get_IGN_5k(layer_name, output_file = output_file)
 #'
 #' @param layer_name The specific layer you want to download (e.g., IGN_5:delimitacion2017_5k).
 #' @param output_format The format in which to download the data (default is GeoJSON, application/json).
@@ -24,7 +32,7 @@
 #'
 #' Download the selected layer
 #'
-#' downloaded_file <- download_IGN_5_data(layer_name, output_file = output_file)
+#' downloaded_file <- get_IGN_5k(layer_name, output_file = output_file)
 #'
 #'
 #'
@@ -33,7 +41,7 @@ library(httr)
 library(xml2)
 library(sf)
 
-download_IGN_5_data <- function(layer_name, output_format = "application/json", output_file) {
+get_IGN_5k <- function(layer_name, output_format = "application/json", output_file) {
   # load libraries
   library(httr)
   library(xml2)

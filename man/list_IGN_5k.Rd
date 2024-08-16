@@ -17,7 +17,7 @@ Sistema Nacional de Información Territorial de Costa Rica
 }
 \examples{
 
-List available layers
+# List available layers
 
 capas <- list_IGN_5k()
 

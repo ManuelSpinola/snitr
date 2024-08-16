@@ -4,7 +4,7 @@
 \alias{get_IGN_5k}
 \title{Download IGN 1:5000 scale layers}
 \usage{
-get_IGN_5k(layer_name, output_file = output_file)
+get_IGN_5k(layer_name, output_format, output_file)
 }
 \arguments{
 \item{layer_name}{The specific layer you want to download (e.g., IGN_5:delimitacion2017_5k).}
@@ -24,17 +24,17 @@ Sistema Nacional de Información Territorial de Costa Rica
 }
 \examples{
 
-Select a layer from the list (replace with your chosen layer)
+# Select a layer from the list (replace with your chosen layer)
 
-Replace with the actual layer name from the list
+# Replace with the actual layer name from the list
 
 layer_name <- "IGN_5:delimitacion2017_5k"
 
-Specify your desired output file format and name
+# Specify your desired output file format and name
 
 output_file <- "IGN_5_delimitacion2017_5k.gpkg"
 
-Download the selected layer
+# Download the selected layer
 
 get_IGN_5k(layer_name, output_file = output_file)
 

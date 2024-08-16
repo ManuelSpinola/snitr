@@ -9,7 +9,7 @@
 #' Sistema Nacional de Información Territorial de Costa Rica
 #'  \href{https://www.snitcr.go.cr}{SNIT}
 #'
-#' @usage get_IGN_5k(layer_name, output_file = output_file)
+#' @usage get_IGN_5k(layer_name, output_format, output_file)
 #'
 #' @param layer_name The specific layer you want to download (e.g., IGN_5:delimitacion2017_5k).
 #' @param output_format The format in which to download the data (default is GeoJSON, application/json).
@@ -21,17 +21,17 @@
 #'
 #' @examples
 #'
-#' Select a layer from the list (replace with your chosen layer)
+#' # Select a layer from the list (replace with your chosen layer)
 #'
-#' Replace with the actual layer name from the list
+#' # Replace with the actual layer name from the list
 #'
 #' layer_name <- "IGN_5:delimitacion2017_5k"
 #'
-#' Specify your desired output file format and name
+#' # Specify your desired output file format and name
 #'
 #' output_file <- "IGN_5_delimitacion2017_5k.gpkg"
 #'
-#' Download the selected layer
+#' # Download the selected layer
 #'
 #' get_IGN_5k(layer_name, output_file = output_file)
 #'
@@ -62,23 +62,23 @@ get_IGN_5k <- function(layer_name, output_format = "application/json", output_fi
   )
 
   # Send the GET request to the WFS endpoint
-  response <- GET(request_url)
+  response <- httr::GET(request_url)
 
   # Check if the request was successful
-  if (status_code(response) == 200) {
+  if (httr::status_code(response) == 200) {
     # Write the response content to a temporary file
     temp_file <- tempfile(fileext = ".geojson")
     writeBin(content(response, "raw"), temp_file)
 
     # Read the downloaded GeoJSON file as an sf object
-    spatial_data <- st_read(temp_file)
+    spatial_data <- sf::st_read(temp_file)
 
     # Save the sf object to the specified output file (can be .gpkg, .shp, etc.)
-    st_write(spatial_data, output_file, delete_dsn = TRUE)
+    sf::st_write(spatial_data, output_file, delete_dsn = TRUE)
 
     # Return the path to the output file
     return(output_file)
   } else {
-    stop("Failed to download data: ", status_code(response))
+    stop("Failed to download data: ", httr::status_code(response))
   }
 }

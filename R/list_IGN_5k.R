@@ -17,7 +17,7 @@
 #'
 #' @examples
 #'
-#' List available layers
+#' # List available layers
 #'
 #' capas <- list_IGN_5k()
 #'
@@ -38,20 +38,20 @@ list_IGN_5k <- function() {
   capabilities_url <- paste0(wfs_url, "service=WFS&version=2.0.0&request=GetCapabilities")
 
   # Send the GET request to retrieve the capabilities document
-  response <- GET(capabilities_url)
+  response <- httr::GET(capabilities_url)
 
   # Check if the request was successful
-  if (status_code(response) == 200) {
+  if (httr::status_code(response) == 200) {
     # Parse the XML response
-    capabilities <- read_xml(content(response, "text"))
+    capabilities <- xml2::read_xml(content(response, "text"))
 
     # Extract and print all available layer names
-    layers <- xml_find_all(capabilities, ".//wfs:FeatureType/wfs:Name", xml_ns(capabilities))
-    layer_names <- xml_text(layers)
+    layers <- xml2::xml_find_all(capabilities, ".//wfs:FeatureType/wfs:Name", xml_ns(capabilities))
+    layer_names <- xml2::xml_text(layers)
     print(layer_names)
 
     return(layer_names)
   } else {
-    stop("Failed to retrieve layers: ", status_code(response))
+    stop("Failed to retrieve layers: ", httr::status_code(response))
   }
 }

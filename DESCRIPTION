@@ -20,3 +20,8 @@ Imports:
     httr,
     xml2,
     sf
+Depends:
+    httr,
+    xml2,
+    sf
+    

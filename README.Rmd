@@ -33,9 +33,10 @@ pak::pak("ManuelSpinola/snitr")
 
 This is a basic example which shows you how to use the package:
 
-```{r example}
+```{r example, warning = FALSE, message = FALSE}
 library(snitr)
-## basic example code
+library(tidyverse)
+library(sf)
 ```
 
 
@@ -57,5 +58,20 @@ output_file <- "IGN_5_delimitacion2017_5k.gpkg"
 ```{r}
 get_IGN_5k(layer_name, output_file = output_file)
 ```
+
+
+
+```{r}
+cr <- read_sf("IGN_5_delimitacion2017_5k.gpkg")
+```
+
+
+```{r}
+ggplot() +
+  theme_minimal() +
+  geom_sf(data = cr, fill = "dodgerblue3")
+```
+
+
 
 

@@ -14,8 +14,8 @@ You can install the development version of snitr from
 [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("pak")
-pak::pak("ManuelSpinola/snitr")
+# install.packages("devtools")
+devtools::install_github("ManuelSpinola/crhexgrids")
 ```
 
 ## Example
@@ -50,8 +50,8 @@ output_file <- "IGN_5_delimitacion2017_5k.gpkg"
 
 ``` r
 get_IGN_5k(layer_name, output_file = output_file)
-#> Reading layer `file599b486f24c4' from data source 
-#>   `/private/var/folders/96/m4trt68j16v3n97qk3zkxrk40000gn/T/RtmpXkDijP/file599b486f24c4.geojson' 
+#> Reading layer `file8b71d09426a' from data source 
+#>   `/private/var/folders/96/m4trt68j16v3n97qk3zkxrk40000gn/T/Rtmp3Dgplj/file8b71d09426a.geojson' 
 #>   using driver `GeoJSON'
 #> Simple feature collection with 475 features and 3 fields
 #> Geometry type: MULTIPOLYGON

@@ -24,10 +24,13 @@ The goal of snitr is to download data from SNIT
 
 You can install the development version of snitr from [GitHub](https://github.com/) with:
 
+
+
 ``` r
-# install.packages("pak")
-pak::pak("ManuelSpinola/snitr")
+# install.packages("devtools")
+devtools::install_github("ManuelSpinola/crhexgrids")
 ```
+
 
 ## Example
 
